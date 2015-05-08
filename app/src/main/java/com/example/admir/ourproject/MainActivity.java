@@ -14,10 +14,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         length = (EditText) findViewById(R.id.passwordLength);
         length.setGravity(Gravity.CENTER);
-
         length.getBackground().setAlpha(50);
     }
 
