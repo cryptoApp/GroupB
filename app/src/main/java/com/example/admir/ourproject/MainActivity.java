@@ -19,7 +19,6 @@ public class MainActivity extends Activity {
         length.setGravity(Gravity.CENTER);
 
         length.getBackground().setAlpha(50);
-
     }
 
     public void textClick(View v) {
