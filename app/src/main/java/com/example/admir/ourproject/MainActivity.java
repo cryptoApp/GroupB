@@ -2,15 +2,18 @@ package com.example.admir.ourproject;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import CustomAlgorithm.Main;
 
 
 public class MainActivity extends Activity {
     EditText length;
+    Main chryptoAlgorithm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,12 +21,6 @@ public class MainActivity extends Activity {
         length = (EditText) findViewById(R.id.passwordLength);
         length.setGravity(Gravity.CENTER);
         length.getBackground().setAlpha(50);
-
-
-        for(int i = 0; i < 10; i++) {
-            Log.e(null, "" + i);
-        }
-
 
 
     }
