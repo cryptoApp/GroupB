@@ -19,6 +19,7 @@ public class MainActivity extends Activity {
         length.setGravity(Gravity.CENTER);
         length.getBackground().setAlpha(50);
 
+
         for(int i = 0; i < 10; i++) {
             Log.e(null, "" + i);
         }
