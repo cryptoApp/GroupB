@@ -9,7 +9,7 @@ package CustomAlgorithm;
  * @author Christian
  */
 public class KeyGenerator {
-    int DIVIDER;
+    int DIVIDER = 5;
 
     public byte[] getKey(String s) {
         byte[] b = new byte[16];

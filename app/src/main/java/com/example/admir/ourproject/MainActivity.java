@@ -13,12 +13,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import CustomAlgorithm.Main;
+import CustomAlgorithm.StartAlgorithm;
 
 
 public class MainActivity extends Activity {
     EditText length;
-    Main chryptoAlgorithm;
+    StartAlgorithm chryptoAlgorithm;
     String imgKey;
     Button encPass;
     @Override
@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
                 String keyString = key.getText().toString();
                 String passString = pass.getText().toString();
                 try {
-                    chryptoAlgorithm = new Main(keyString, passString,MainActivity.this);
+                    chryptoAlgorithm = new StartAlgorithm(keyString, passString,MainActivity.this);
 
                 }catch (Exception e) {
                     Toast.makeText(getApplicationContext(),"Error occured.." + e,Toast.LENGTH_SHORT).show();
@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
             public void onClick(DialogInterface dialog, int whichButton) {
                 String passString = pass.getText().toString();
                 try {
-                    chryptoAlgorithm = new Main(imgKey, passString,MainActivity.this);
+                    chryptoAlgorithm = new StartAlgorithm(imgKey, passString,MainActivity.this);
                 }catch (Exception e) {
                     Toast.makeText(getApplicationContext(),"Error occured.." + e,Toast.LENGTH_SHORT).show();
                     dialog.dismiss();

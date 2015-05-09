@@ -66,6 +66,7 @@ public class EndAlgorithm {
         int orginCounter = 0;
         int val = 0;
         String passEvo = "";
+        boolean mixer = false;
         for (int i = 0; i < finalPassword.length(); i++) {
 
             if (finalPassword.charAt(i) == '.') {
@@ -76,23 +77,43 @@ public class EndAlgorithm {
                     val = (int) orgin.charAt(orginCounter);
                 }
 
-                if (val < lib.length) {
-                    passEvo += Character.toString(lib[val]);
-                } else {
+                if(!mixer) {
 
-                    while (val >= lib.length) {
+                    if (val < lib.length) {
+                        passEvo += Character.toString(lib[val]);
+                    } else {
 
-                        if (valuesBeingUsed.contains(VALUE_FOR_MODULUS)) {
-                            VALUE_FOR_MODULUS++;
+                        while (val >= lib.length) {
+
+                            if (valuesBeingUsed.contains(VALUE_FOR_MODULUS)) {
+                                VALUE_FOR_MODULUS++;
+                            }
+
+                            val = (val % VALUE_FOR_MODULUS);
+
+                            valuesBeingUsed.add(VALUE_FOR_MODULUS);
                         }
-
-                        val = (val % VALUE_FOR_MODULUS);
-
-                        valuesBeingUsed.add(VALUE_FOR_MODULUS);
+                        passEvo += Character.toString(lib[val]);
                     }
-                    passEvo += Character.toString(lib[val]);
-                }
+                } else {
+                    if (val < alphalib.length) {
+                        passEvo += Character.toString(alphalib[val]);
+                    } else {
 
+                        while (val >= alphalib.length) {
+
+                            if (valuesBeingUsed.contains(VALUE_FOR_MODULUS)) {
+                                VALUE_FOR_MODULUS++;
+                            }
+
+                            val = (val % VALUE_FOR_MODULUS);
+
+                            valuesBeingUsed.add(VALUE_FOR_MODULUS);
+                        }
+                        passEvo += Character.toString(alphalib[val]);
+                    }
+                }
+                mixer = !mixer;
             } else {
 
                 passEvo += Character.toString(finalPassword.charAt(i));
