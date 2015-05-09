@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:id="@+id/facebook"
+                android:layout_height="match_parent"
+                android:src="@mipmap/slobbe" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:id="@+id/instagram"
+                android:layout_height="match_parent"
+                android:src="@mipmap/slobbe" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:id="@+id/twitter"
+                android:layout_height="match_parent"
+                android:src="@mipmap/slobbe" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:id="@+id/badoo"
+                android:layout_height="match_parent"
+                android:src="@mipmap/slobbe" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:id="@+id/tinder"
+                android:layout_height="match_parent"
+                android:src="@mipmap/slobbe" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:id="@+id/woff"
+                android:layout_height="match_parent"
+                android:src="@mipmap/slobbe" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nokey"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp" />
+</LinearLayout>
