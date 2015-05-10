@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
     StartAlgorithm chryptoAlgorithm;
     String imgKey;
     Button encPass;
+    String hej = "f";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
