@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import CustomAlgorithm.StartAlgorithm;
@@ -21,7 +22,17 @@ public class MainActivity extends Activity {
     StartAlgorithm chryptoAlgorithm;
     String imgKey;
     Button encPass;
-    String hej = "f";
+
+    boolean specialChar = false;
+    boolean upperCase = false;
+    boolean lowerCase = false;
+
+
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +41,7 @@ public class MainActivity extends Activity {
         length.setGravity(Gravity.CENTER);
         length.getBackground().setAlpha(50);
         imgKey = "nokey";
-        encPass = (Button) findViewById(R.id.encryptedPassword);
+        //encPass = (Button) findViewById(R.id.encryptedPassword);
     }
 
     public void textClick(View v) {
@@ -42,9 +53,35 @@ public class MainActivity extends Activity {
         openDialogForImageKey();
     }
 
-    public void getPassword(View v) {
-        Toast.makeText(this, "Här får man upp den krypterade lösenordet!", Toast.LENGTH_LONG).show();
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
 
+        switch(view.getId()) {
+            case R.id.radio_char:
+                if (checked) {
+                    specialChar = true;
+                } else {
+                    specialChar = false;
+                }
+                    break;
+
+            case R.id.radio_upper:
+                if (checked) {
+                    upperCase = true;
+                } else {
+                    upperCase = false;
+                }
+                break;
+
+            case R.id.radio_lower:
+                if (checked) {
+                    lowerCase = true;
+                } else {
+                    lowerCase = false;
+                }
+                break;
+
+        }
     }
 
     private void openDialogForInput() {
