@@ -16,9 +16,10 @@ public class StartAlgorithm {
     EncryptGenerator encGen;
     KeyGenerator keyGen;
     EndAlgorithm endAlg;
+    String pass;
 
     //basic constructor
-    public StartAlgorithm(String keyFromUser, String password, Context c) throws Exception {
+    public StartAlgorithm(String keyFromUser, String password) throws Exception {
 
         encGen = new EncryptGenerator();
         keyGen = new KeyGenerator();
@@ -26,28 +27,30 @@ public class StartAlgorithm {
         byte[] key = keyGen.getKey(keyFromUser);    //GEnereates a key
         encGen.setKey(key);
 
-        String pass = new String(encGen.encryptPassword(password.getBytes())); //Get the AES encrypted password
+        pass = new String(encGen.encryptPassword(password.getBytes())); //Get the AES encrypted password
 
         endAlg = new EndAlgorithm(pass, keyFromUser);
         //Encrypt the password in our engine
         pass = endAlg.finalAlgorithm();
-        Toast.makeText(c, pass, Toast.LENGTH_SHORT).show();
     }
 
-    public StartAlgorithm(String keyFromUser, String password, Context c, int fixedLength, boolean hasLower, boolean hasUpper, boolean hasSpecChar) throws Exception {
+    public StartAlgorithm(String keyFromUser, String password, int fixedLength, boolean hasLower, boolean hasUpper, boolean hasSpecChar,boolean hasNumbers) throws Exception {
 
         encGen = new EncryptGenerator();
         keyGen = new KeyGenerator();
 
-        byte[] key = keyGen.getKey(keyFromUser);    //GEnereates a key
+        byte[] key = keyGen.getKey(keyFromUser);    //Generates a key
         encGen.setKey(key);
 
-        String pass = new String(encGen.encryptPassword(password.getBytes())); //Get the AES encrypted password
+        pass = new String(encGen.encryptPassword(password.getBytes())); //Get the AES encrypted password
 
-        endAlg = new EndAlgorithm(pass, keyFromUser);
+        endAlg = new EndAlgorithm(pass, keyFromUser,fixedLength,hasLower,hasUpper,hasSpecChar,hasNumbers);
         //Encrypt the password in our engine
         pass = endAlg.finalAlgorithm();
-        Toast.makeText(c, pass, Toast.LENGTH_SHORT).show();
+    }
+
+    public String getPass() {
+        return this.pass;
     }
 }
 

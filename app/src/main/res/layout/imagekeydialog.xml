@@ -22,11 +22,13 @@
             <ImageView
                 android:layout_width="100dp"
                 android:id="@+id/instagram"
+                android:layout_marginLeft="5dp"
                 android:layout_height="match_parent"
                 android:src="@mipmap/slobbe" />
 
             <ImageView
                 android:layout_width="100dp"
+                android:layout_marginLeft="5dp"
                 android:id="@+id/twitter"
                 android:layout_height="match_parent"
                 android:src="@mipmap/slobbe" />
@@ -35,17 +37,20 @@
                 android:layout_width="100dp"
                 android:id="@+id/badoo"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
                 android:src="@mipmap/slobbe" />
 
             <ImageView
                 android:layout_width="100dp"
                 android:id="@+id/tinder"
+                android:layout_marginLeft="5dp"
                 android:layout_height="match_parent"
                 android:src="@mipmap/slobbe" />
 
             <ImageView
                 android:layout_width="100dp"
                 android:id="@+id/woff"
+                android:layout_marginLeft="5dp"
                 android:layout_height="match_parent"
                 android:src="@mipmap/slobbe" />
 

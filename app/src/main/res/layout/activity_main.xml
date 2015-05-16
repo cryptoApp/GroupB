@@ -1,100 +1,171 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@mipmap/background"
-    android:id="@+id/lay">
+    tools:context=".MainActivity">
 
-    <EditText
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/view1"
+        android:layout_below="@+id/textView3"
+        android:background="@android:color/white"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:text="Password length"
         android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/view1"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/passwordLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:ems="10"
-        android:id="@+id/passwordLength"
-        android:layout_marginTop="180dp"
-        android:layout_alignParentTop="true"
+        android:editable="false"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/white"
+        android:layout_below="@+id/radio_number"
+        android:layout_marginTop="0dp"
+        android:id="@+id/view2" />
+
+
+    <CheckBox
+        android:id="@+id/radio_char"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/passwordLength"
+        android:layout_alignStart="@+id/passwordLength"
+        android:layout_below="@+id/seekBar"
+        android:layout_marginTop="20dp"
+        android:checked="false"
+        android:gravity="center"
+        android:onClick="onRadioButtonClicked"
+        android:text="Special characters"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/radio_upper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:layout_alignLeft="@+id/passwordLength"
+        android:layout_alignStart="@+id/passwordLength"
+        android:gravity="center"
+        android:layout_below="@+id/radio_char"
+        android:layout_marginTop="20dp"
+        android:onClick="onRadioButtonClicked"
+        android:text="Use uppercase"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_centerVertical="true" />
+
+    <CheckBox
+        android:id="@+id/radio_lower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/passwordLength"
+        android:layout_alignStart="@+id/passwordLength"
+        android:layout_below="@+id/radio_upper"
+        android:layout_marginTop="20dp"
+        android:layout_centerVertical="true"
+        android:checked="false"
+        android:onClick="onRadioButtonClicked"
+        android:text="Use lowercase"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/radio_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/passwordLength"
+        android:layout_alignStart="@+id/passwordLength"
+        android:layout_below="@+id/radio_lower"
+        android:layout_marginTop="20dp"
+        android:layout_centerVertical="true"
+        android:checked="false"
+        android:onClick="onRadioButtonClicked"
+        android:text="Include number"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:onClick="textClick"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/view2"
+        android:src="@mipmap/imaget" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:onClick="imageClick"
+        android:src="@mipmap/imageb"
+        android:layout_below="@+id/view2" />
+
+    <EditText
+        android:id="@+id/finalPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:editable="false"
+        android:ems="10"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/radio_number"
+        android:layout_alignStart="@+id/radio_number" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:textColor="#FFFFFF"
+        android:text="Optional"
         android:textStyle="bold"
-        android:text="Password length?"
-        android:id="@+id/textView2"
-        android:layout_marginBottom="46dp"
-        android:layout_alignBottom="@+id/passwordLength"
-        android:layout_centerHorizontal="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Special characters"
-        android:gravity="center"
-        android:textSize="20dp"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:id="@+id/radio_char"
-        android:checked="false"
-        android:layout_below="@+id/passwordLength"
-        android:layout_alignLeft="@+id/passwordLength"
-        android:layout_alignStart="@+id/passwordLength"
-        android:onClick="onRadioButtonClicked" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Use uppercase"
-        android:gravity="center"
         android:textSize="20dp"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:id="@+id/radio_upper"
-        android:checked="false"
-        android:layout_below="@+id/radio_char"
-        android:layout_alignLeft="@+id/radio_char"
-        android:layout_alignStart="@+id/radio_char"
-        android:onClick="onRadioButtonClicked" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Use lowercase"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:id="@+id/radio_lower"
-        android:checked="false"
-        android:layout_below="@+id/radio_upper"
-        android:layout_alignLeft="@+id/radio_upper"
-        android:layout_alignStart="@+id/radio_upper"
-        android:onClick="onRadioButtonClicked" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/imaget"
-        android:layout_below="@+id/radio_lower"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="67dp"
-        android:onClick="textClick" />
+        android:id="@+id/textView3"
+        android:layout_marginTop="120dp"/>
 
-    <ImageView
+    <SeekBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
-        android:src="@drawable/imageb"
-        android:layout_below="@+id/imageView"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_marginTop="44dp"
-        android:onClick="imageClick" />
+        android:id="@+id/seekBar"
+        android:layout_below="@+id/passwordLength"
+        android:layout_marginTop="10dp"
+        android:max="30"
+        android:layout_alignRight="@+id/passwordLength"
+        android:layout_alignEnd="@+id/passwordLength"
+        android:layout_alignLeft="@+id/radio_char"
+        android:layout_alignStart="@+id/radio_char" />
+
 
 </RelativeLayout>
