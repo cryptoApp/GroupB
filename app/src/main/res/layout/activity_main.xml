@@ -8,7 +8,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:id="@+id/view1"
         android:layout_below="@+id/textView3"
         android:background="@android:color/white"
@@ -42,7 +42,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:background="@android:color/white"
         android:layout_below="@+id/radio_number"
         android:layout_marginTop="0dp"
@@ -121,7 +121,7 @@
         android:onClick="textClick"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/view2"
-        android:src="@mipmap/imaget" />
+        android:src="@drawable/imaget" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -129,7 +129,7 @@
         android:layout_height="100dp"
         android:layout_alignParentRight="true"
         android:onClick="imageClick"
-        android:src="@mipmap/imageb"
+        android:src="@drawable/imageb"
         android:layout_below="@+id/view2" />
 
     <EditText
@@ -138,11 +138,11 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:editable="false"
+        android:textSize="12sp"
         android:ems="10"
         android:textColor="#FFFFFF"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/radio_number"
-        android:layout_alignStart="@+id/radio_number" />
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -167,5 +167,14 @@
         android:layout_alignLeft="@+id/radio_char"
         android:layout_alignStart="@+id/radio_char" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:src="@drawable/infothe"
+        android:onClick="infoClick"
+        android:layout_below="@+id/view1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

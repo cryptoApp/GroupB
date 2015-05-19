@@ -2,11 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C0C0C0"
     android:orientation="vertical">
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
+        android:scrollbars="none"
         android:layout_height="100dp">
 
         <LinearLayout
@@ -17,38 +19,38 @@
                 android:layout_width="100dp"
                 android:id="@+id/facebook"
                 android:layout_height="match_parent"
-                android:src="@mipmap/slobbe" />
+                android:src="@mipmap/facebook" />
 
             <ImageView
                 android:layout_width="100dp"
                 android:id="@+id/instagram"
                 android:layout_marginLeft="5dp"
                 android:layout_height="match_parent"
-                android:src="@mipmap/slobbe" />
+                android:src="@mipmap/linkedin" />
 
             <ImageView
                 android:layout_width="100dp"
                 android:layout_marginLeft="5dp"
                 android:id="@+id/twitter"
                 android:layout_height="match_parent"
-                android:src="@mipmap/slobbe" />
+                android:src="@mipmap/twitter" />
 
             <ImageView
                 android:layout_width="100dp"
                 android:id="@+id/badoo"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:src="@mipmap/slobbe" />
+                android:src="@mipmap/google" />
 
             <ImageView
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:id="@+id/tinder"
                 android:layout_marginLeft="5dp"
                 android:layout_height="match_parent"
                 android:src="@mipmap/slobbe" />
 
             <ImageView
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:id="@+id/woff"
                 android:layout_marginLeft="5dp"
                 android:layout_height="match_parent"

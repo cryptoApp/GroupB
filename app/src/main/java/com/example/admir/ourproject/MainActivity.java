@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.text.Editable;
@@ -73,6 +74,10 @@ public class MainActivity extends Activity {
 
     public void imageClick(View v) {
         openDialogForImageKey();
+    }
+
+    public void infoClick(View view) {
+        startActivity(new Intent(MainActivity.this, InfoActivity.class));
     }
 
     public void onRadioButtonClicked(View view) {
@@ -237,11 +242,12 @@ public class MainActivity extends Activity {
         bad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imgKey = "Badoo";
+                imgKey ="Google +";
                 tv.setText(imgKey);
             }
         });
         ImageView woff = (ImageView) v.findViewById(R.id.woff);
+        woff.setVisibility(View.INVISIBLE);
         woff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -250,6 +256,7 @@ public class MainActivity extends Activity {
             }
         });
         ImageView tind = (ImageView) v.findViewById(R.id.tinder);
+        tind.setVisibility(View.INVISIBLE);
         tind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
